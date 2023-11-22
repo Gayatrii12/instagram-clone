@@ -1,0 +1,41 @@
+.post{
+    width: 550px;
+    margin: 30px;
+}
+
+.post__header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.post__headerAuthor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.post__image > img{
+    width: 100%;
+    border-radius: 3px;
+    border: 0.1px solid darkgrey;
+}
+.post__footer{
+    
+}
+.footer__icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.posticon{
+    padding: 7px;
+}
+.posticon:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255, 0.5);
+}
+.post__iconSave{
+    left: 3px;
+}

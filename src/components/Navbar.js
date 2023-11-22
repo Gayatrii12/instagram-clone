@@ -1,10 +1,11 @@
 import React from 'react'
 import "../styles/Navbar.css"
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import MovieOutlinedIcon from "@mui/icons-material/MovieOutlined";
-import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+import TelegramIcon from "@mui/icons-material/Telegram";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -35,7 +36,7 @@ function Navbar() {
           <span>Reels</span>
         </button>
         <button className="nav__button">
-          <SendOutlinedIcon />
+          <TelegramIcon />
           <span>Messages</span>
         </button>
         <button className="nav__button">
@@ -45,6 +46,10 @@ function Navbar() {
         <button className="nav__button">
           <AddBoxOutlinedIcon />
           <span>Create</span>
+        </button>
+        <button className="nav__button">
+          <AccountCircleIcon />
+          <span>Profile</span>
         </button>
       </div>
       <div className="nav__more">
