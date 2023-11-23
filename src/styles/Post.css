@@ -14,11 +14,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 10px;
+}
+.post__headerAuthor > span{
+    color: gray;
 }
 .post__image > img{
     width: 100%;
     border-radius: 3px;
-    border: 0.1px solid darkgrey;
+    border: 0.1px solid rgb(255, 255, 255, 0.3);
 }
 .post__footer{
     
