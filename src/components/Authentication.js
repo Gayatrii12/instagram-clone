@@ -5,6 +5,10 @@ import Signup from './Signup';
 
 function Authentication() {
     const [active, setActive] = useState("login")
+    const handleChange= () => {
+        setActive(active === "login" ? "signup" : "login");
+    };
+
   return (
     <div className="authentication">
       <div className="auth__left">
@@ -16,7 +20,7 @@ function Authentication() {
           <span>
             {active === "login" ? (
               <>
-                Don't have an account? <button className='bt'>Sign Up</button>
+                Don't have an account? <button className='bt' onClick={handleChange}>Sign Up</button>
               </>
             ) : (
               <>
