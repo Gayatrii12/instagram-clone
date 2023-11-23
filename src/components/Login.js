@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import "../styles/Login.css"
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
 
 function Login() {
     const[email, setEmail] = useState("");
     const[password, setPassword] = useState("");
+    const handleLogin = () => {
+        signInWithEmailAndPassword(auth, email, password);
+    }
+
 
   return (
     <div className="login">
@@ -23,7 +29,7 @@ function Login() {
         placeholder="Password"
         value={password}
       />
-      <button>Login</button>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 }

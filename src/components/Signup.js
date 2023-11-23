@@ -1,10 +1,30 @@
-import React, {useState} from 'react'
-import "../styles/Signup.css"
+import React, { useState } from "react";
+import "../styles/Signup.css";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "../firebase";
 
 function Signup() {
-    const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  console.log(username)
+
+  const handleSignup = (event) => {
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password).then( (authUser)=> {
+      signInWithEmailAndPassword(auth, email, password).then(
+        updateProfile(auth.currentUser, { displayName: username })
+      );
+    })
+    .catch((err) => {
+        alert(err)
+    })
+  };
+
   return (
     <div className="signup">
       <img
@@ -19,8 +39,8 @@ function Signup() {
       />
       <input
         onChange={(e) => setUsername(e.target.value)}
-        type='text'
-        placeholder='Username'
+        type="text"
+        placeholder="Username"
         value={username}
       />
       <input
@@ -29,9 +49,9 @@ function Signup() {
         placeholder="Password"
         value={password}
       />
-      <button>Sign Up</button>
+      <button onClick={handleSignup}>Sign Up</button>
     </div>
   );
 }
 
-export default Signup
+export default Signup;
